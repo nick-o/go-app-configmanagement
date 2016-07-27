@@ -1,9 +1,9 @@
-name             'go-app-configmanagment'
+name             'go-app-configmanagement'
 maintainer       'YOUR_NAME'
 maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
-description      'Installs/Configures go-app-configmanagment'
-long_description 'Installs/Configures go-app-configmanagment'
+description      'Installs/Configures go-app-configmanagement'
+long_description 'Installs/Configures go-app-configmanagement'
 version          '0.1.0'
 
 depends 'nginx', '~>2.7.6'

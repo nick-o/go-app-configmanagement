@@ -1,5 +1,5 @@
 DEPENDENCIES
-  go-app-configmanagment
+  go-app-configmanagement
     path: .
     metadata: true
 
@@ -13,7 +13,7 @@ GRAPH
     7-zip (>= 0.0.0)
   chef_handler (1.4.0)
   compat_resource (12.10.7)
-  go-app-configmanagment (0.1.0)
+  go-app-configmanagement (0.1.0)
     nginx (~> 2.7.6)
     supervisor (~> 0.4.12)
   nginx (2.7.6)

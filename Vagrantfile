@@ -25,8 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         }
       }
       chef.run_list = [
-        'recipe[go-app-configmanagment::default]',
-        'recipe[go-app-configmanagment::nginx]'
+        'recipe[go-app-configmanagement::default]',
+        'recipe[go-app-configmanagement::nginx]'
       ]
     end
   end
@@ -48,8 +48,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         }
       }
       chef.run_list = [
-        'recipe[go-app-configmanagment::default]',
-        'recipe[go-app-configmanagment::go-app]'
+        'recipe[go-app-configmanagement::default]',
+        'recipe[go-app-configmanagement::go-app]'
       ]
     end
   end
@@ -71,8 +71,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         }
       }
       chef.run_list = [
-        'recipe[go-app-configmanagment::default]',
-        'recipe[go-app-configmanagment::go-app]'
+        'recipe[go-app-configmanagement::default]',
+        'recipe[go-app-configmanagement::go-app]'
       ]
     end
   end
