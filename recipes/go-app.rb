@@ -7,13 +7,20 @@
 # All rights reserved - Do Not Redistribute
 #
 
-group node['myface']['group']
+group node['go-app-configmanagement']['group']
 
-user node['myface']['user'] do
+user node['go-app-configmanagement']['user'] do
   supports manage_home: true
-  group node['myface']['group']
-  home "/opt/#{node['myface']['user']}"
+  group node['go-app-configmanagement']['group']
+  home "/opt/#{node['go-app-configmanagement']['user']}"
   system true
   shell '/bin/bash'
   action :create
+end
+
+remote_file "/opt/#{node['go-app-configmanagement']['user']}/go-app" do
+  source 'https://2-64293579-gh.circle-artifacts.com/0//tmp/circle-artifacts.dFYa19K/go-app'
+  owner node['go-app-configmanagement']['user']
+  group node['go-app-configmanagement']['group']
+  mode '0755'
 end
