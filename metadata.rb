@@ -7,3 +7,4 @@ long_description 'Installs/Configures go-app-configmanagment'
 version          '0.1.0'
 
 depends 'nginx', '~>2.7.6'
+depends 'supervisor', '~>0.4.12'

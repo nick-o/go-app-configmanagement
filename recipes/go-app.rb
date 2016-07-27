@@ -24,3 +24,10 @@ remote_file "/opt/#{node['go-app-configmanagement']['user']}/go-app" do
   group node['go-app-configmanagement']['group']
   mode '0755'
 end
+
+include_recipe 'supervisor'
+supervisor_service 'go-app' do
+  command "/opt/#{node['go-app-configmanagement']['user']}/go-app"
+  action :enable
+  user node['go-app-configmanagement']['user']
+end
