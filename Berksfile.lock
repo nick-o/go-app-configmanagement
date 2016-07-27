@@ -1,0 +1,7 @@
+DEPENDENCIES
+  go-app-configmanagment
+    path: .
+    metadata: true
+
+GRAPH
+  go-app-configmanagment (0.1.0)
