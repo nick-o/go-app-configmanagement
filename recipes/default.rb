@@ -8,3 +8,16 @@
 #
 
 node.default['chef-client']['log_file'] = '/var/log/chef/client.log'
+
+recipes = []
+recipes << 'apt'
+
+unless Chef::Config[:solo]
+  recipes << 'chef-client::delete_validation'
+  recipes << 'chef-client::config'
+  recipes << 'chef-client'
+end
+
+recipes.each do |r|
+  include_recipe r
+end

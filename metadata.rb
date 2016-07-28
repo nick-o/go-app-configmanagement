@@ -6,5 +6,8 @@ description      'Installs/Configures go-app-configmanagement'
 long_description 'Installs/Configures go-app-configmanagement'
 version          '0.1.0'
 
+depends 'chef-client'
+depends 'apt'
+
 depends 'nginx', '~>2.7.6'
 depends 'supervisor', '~>0.4.12'
