@@ -19,7 +19,7 @@ user node['go-app-configmanagement']['user'] do
 end
 
 remote_file "/opt/#{node['go-app-configmanagement']['user']}/go-app" do
-  source 'https://s3-eu-west-1.amazonaws.com/go-app-artifacts/go-app'
+  source node['go-app-configmanagement']['artifact_url']
   owner node['go-app-configmanagement']['user']
   group node['go-app-configmanagement']['group']
   mode '0755'
