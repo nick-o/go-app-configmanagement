@@ -9,7 +9,17 @@
 
 include_recipe 'nginx'
 
-ips = %w(172.28.128.11 172.28.128.12)
+#ips = %w(172.28.128.11 172.28.128.12)
+
+app_nodes = search(:node, 'tags:app')
+ips = []
+app_nodes.each do |node|
+  ips.push(best_ip_for(node))
+end
+
+if ips.empty?
+  ips.push('127.0.0.1')
+end
 
 template 'nginx_lb' do
   cookbook 'go-app-configmanagement'

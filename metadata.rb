@@ -11,3 +11,4 @@ depends 'apt'
 
 depends 'nginx', '~>2.7.6'
 depends 'supervisor', '~>0.4.12'
+depends 'chef-sugar', '~> 3.4.0'

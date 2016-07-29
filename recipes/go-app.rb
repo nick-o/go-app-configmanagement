@@ -31,3 +31,5 @@ supervisor_service 'go-app' do
   action :enable
   user node['go-app-configmanagement']['user']
 end
+
+tag 'app'

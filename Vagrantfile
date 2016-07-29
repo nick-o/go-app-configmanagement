@@ -7,16 +7,15 @@ VAGRANTFILE_API_VERSION = '2'.freeze
 Vagrant.require_version '>= 1.5.0'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
-  config.vm.define 'web' do |config|
-    config.vm.box = 'bento/ubuntu-14.04'
-    config.vm.hostname = 'web'
-    if Vagrant.has_plugin?("vagrant-omnibus")
+  config.vm.define 'web' do |conf|
+    conf.vm.box = 'bento/ubuntu-14.04'
+    conf.vm.hostname = 'web'
+    if Vagrant.has_plugin?('vagrant-omnibus')
       config.omnibus.chef_version = 'latest'
     end
-    config.vm.network :private_network, ip: '172.28.128.10'
-    config.berkshelf.enabled = true
-    config.vm.provision :chef_solo do |chef|
+    conf.vm.network :private_network, ip: '172.28.128.10'
+    conf.berkshelf.enabled = true
+    conf.vm.provision :chef_solo do |chef|
       chef.json = {
         mysql: {
           server_root_password: 'rootpass',
@@ -31,15 +30,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define 'app-01' do |config|
-    config.vm.box = 'bento/ubuntu-14.04'
-    config.vm.hostname = 'app-01'
-    if Vagrant.has_plugin?("vagrant-omnibus")
+  config.vm.define 'app-01' do |conf|
+    conf.vm.box = 'bento/ubuntu-14.04'
+    conf.vm.hostname = 'app-01'
+    if Vagrant.has_plugin?('vagrant-omnibus')
       config.omnibus.chef_version = 'latest'
     end
-    config.vm.network :private_network, ip: '172.28.128.11'
-    config.berkshelf.enabled = true
-    config.vm.provision :chef_solo do |chef|
+    conf.vm.network :private_network, ip: '172.28.128.11'
+    conf.berkshelf.enabled = true
+    conf.vm.provision :chef_solo do |chef|
       chef.json = {
         mysql: {
           server_root_password: 'rootpass',
@@ -54,15 +53,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define 'app-02' do |config|
-    config.vm.box = 'bento/ubuntu-14.04'
-    config.vm.hostname = 'app-02'
-    if Vagrant.has_plugin?("vagrant-omnibus")
-      config.omnibus.chef_version = 'latest'
+  config.vm.define 'app-02' do |conf|
+    conf.vm.box = 'bento/ubuntu-14.04'
+    conf.vm.hostname = 'app-02'
+    if Vagrant.has_plugin?('vagrant-omnibus')
+      conf.omnibus.chef_version = 'latest'
     end
-    config.vm.network :private_network, ip: '172.28.128.12'
-    config.berkshelf.enabled = true
-    config.vm.provision :chef_solo do |chef|
+    conf.vm.network :private_network, ip: '172.28.128.12'
+    conf.berkshelf.enabled = true
+    conf.vm.provision :chef_solo do |chef|
       chef.json = {
         mysql: {
           server_root_password: 'rootpass',
@@ -76,6 +75,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ]
     end
   end
-
-
 end

@@ -9,8 +9,7 @@
 
 node.default['chef-client']['log_file'] = '/var/log/chef/client.log'
 
-recipes = []
-recipes << 'apt'
+recipes = %w(apt chef-sugar) 
 
 unless Chef::Config[:solo]
   recipes << 'chef-client::delete_validation'
