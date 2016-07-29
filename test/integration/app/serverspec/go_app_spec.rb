@@ -13,6 +13,6 @@ describe 'Go sample app' do
   end
 
   describe command('supervisorctl status') do
-    its(:stdout) { should match /^go-app\s*RUNNING/ }
+    its(:stdout) { should match(/^go-app\s*RUNNING/) }
   end
 end

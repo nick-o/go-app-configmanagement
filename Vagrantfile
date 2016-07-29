@@ -48,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[go-app-configmanagement::default]',
-        'recipe[go-app-configmanagement::go-app]'
+        'recipe[go-app-configmanagement::go_app]'
       ]
     end
   end
@@ -71,7 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[go-app-configmanagement::default]',
-        'recipe[go-app-configmanagement::go-app]'
+        'recipe[go-app-configmanagement::go_app]'
       ]
     end
   end

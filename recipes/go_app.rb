@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: go-app-configmanagement
-# Recipe:: go-app
+# Recipe:: go_app
 #
 # Copyright (C) 2016 YOUR_NAME
 #
