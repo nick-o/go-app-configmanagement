@@ -4,7 +4,7 @@ maintainer_email 'engelen.nico@googlemail.com'
 license          'All rights reserved'
 description      'Installs/Configures go-app-configmanagement'
 long_description 'Installs/Configures go-app-configmanagement'
-version          '0.1.0'
+version          '0.1.1'
 issues_url       'https://github.com/nick-o/go-app-configmanagement/issues'
 source_url       'https://github.com/nick-o/go-app-configmanagement/'
 

@@ -23,6 +23,7 @@ remote_file "/opt/#{node['go-app-configmanagement']['user']}/go-app" do
   owner node['go-app-configmanagement']['user']
   group node['go-app-configmanagement']['group']
   mode '0755'
+  notifies :restart, 'supervisor_service[go-app]', :delayed
 end
 
 include_recipe 'supervisor'

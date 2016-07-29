@@ -19,7 +19,7 @@ GRAPH
   chef_handler (1.4.0)
   compat_resource (12.10.7)
   cron (1.7.6)
-  go-app-configmanagement (0.1.0)
+  go-app-configmanagement (0.1.1)
     apt (>= 0.0.0)
     chef-client (>= 0.0.0)
     chef-sugar (~> 3.4.0)
