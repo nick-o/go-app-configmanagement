@@ -1,7 +1,16 @@
 machine:
   ruby:
     version: ruby-2.2.5
+  environment:
+    KITCHEN_LOCAL_YAML: .kitchen.circleci.yml
 
+dependencies:
+  cache_directories:
+    - "~/bundle"
+  override:
+    - sudo service docker start
+    - bundle install --path=~/bundle --jobs=4 --retry=3:
+        timeout: 600
 test:
   override:
-    - bundle exec rubocop
+    - bundle exec rake testcontinuous
