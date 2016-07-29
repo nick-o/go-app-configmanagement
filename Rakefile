@@ -17,7 +17,7 @@ end
 task style: ['style:ruby', 'style:chef']
 
 namespace :integration do
-  task circleci: do
+  task :circleci do
     loader = Kitchen::Loader::Yaml.New(local_config: '.kitchen.circleci.yml')
     Kitchen::Config.new(loader: @loader).instances.each do |instance|
       instance.test(:always)
